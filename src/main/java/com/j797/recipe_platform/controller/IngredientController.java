@@ -1,8 +1,8 @@
 package com.j797.recipe_platform.controller;
 
-import com.j797.recipe_platform.dto.RecipeDto;
-import com.j797.recipe_platform.dto.RecipeResponseDto;
-import com.j797.recipe_platform.service.RecipeService;
+import com.j797.recipe_platform.dto.IngredientDto;
+import com.j797.recipe_platform.dto.IngredientResponseDto;
+import com.j797.recipe_platform.service.IngredientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/recipes")
+@RequestMapping("/api/ingredients")
 @RequiredArgsConstructor
-public class RecipeController {
-    private final RecipeService recipeService;
+public class IngredientController {
+    private final IngredientService ingredientService;
 
     @PostMapping
-    public RecipeResponseDto create(
-            @Validated @RequestBody RecipeDto dto
+    public IngredientResponseDto create(
+            @Validated @RequestBody IngredientDto dto
     ) {
-        return recipeService.create(dto);
+        return ingredientService.create(dto);
     }
 }
