@@ -31,7 +31,7 @@ public class Recipe {
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference("recipe-ri")
-    private List<RecipeIngredient> recipeIngredientList = new ArrayList<>();
+    private List<RecipeIngredient> recipeIngredients = new ArrayList<>();
 //
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @MapsId("ingredientId")
